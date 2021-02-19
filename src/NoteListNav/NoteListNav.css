@@ -11,7 +11,8 @@
   }
   
   .NoteListNav-button {
-    margin: 20px auto;
+    margin: 20px 200px;
+
   }
   .NoteListNav-button:hover {
     background-color: #29862e;
