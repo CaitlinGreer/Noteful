@@ -1,11 +1,13 @@
 import React from 'react'
 import {Route, Link} from 'react-router-dom'
-import MainNoteList from './MainNoteList/MainNoteList' // Main section, list of all notes
-import FolderList from './FolderList/FolderList' // Folder section, list of all folders
-import MainNote from './MainNote/MainNote' // Main section, single note selected
-import FolderNote from './FolderNote/FolderNote' // Folder section when single note selected
-import AddFolder from './AddFolder/AddFolder' // Add Folder Form Page
-import AddNote from './AddNote/AddNote' // Add Note Form Page
+import MainNoteList from './MainNoteList/MainNoteList' // list of all notes
+import FolderList from './FolderList/FolderList' // list of all folders
+import MainNote from './MainNote/MainNote' // single note selected
+import FolderNote from './FolderNote/FolderNote' // when single note selected
+import AddFolder from './AddFolder/AddFolder' // Add Folder Page
+import AddNote from './AddNote/AddNote' // Add Note Page
+import NotesError from './NotesError/NotesError' //Notes Error Boundaries
+import FolderError from './FolderError/FolderError' //Folder Error Boundaries
 import ApiContext from './ApiContext'
 import config from './config'
 import './App.css'
@@ -51,7 +53,7 @@ class App extends React.Component {
 
   renderFolderRoutes () {
     return (
-      <div>
+      <FolderError>
         {['/', '/folder/:folderId'].map(path => (
           <Route
             exact
@@ -61,13 +63,13 @@ class App extends React.Component {
           />
         ))}
         <Route path='/note/:noteId' component={FolderNote}/>
-        </div>
+        </FolderError>
     )
   }
 
   renderNoteRoutes () {
     return (
-      <div>
+      <NotesError>
         {['/', '/folder/:folderId'].map(path => (
           <Route
             exact
@@ -79,7 +81,7 @@ class App extends React.Component {
         <Route path='/note/:noteId' component={MainNote}/>
         <Route path='/add-note' component={AddNote}/>
         <Route path='/add-folder' component={AddFolder}/>
-      </div>
+      </NotesError>
     )
   }
 
