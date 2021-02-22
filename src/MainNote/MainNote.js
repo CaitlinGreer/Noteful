@@ -3,17 +3,22 @@ import Moment from 'react-moment'
 import ApiContext from '../ApiContext'
 import {findNote} from '../notes-helpers'
 import PropTypes from 'prop-types'
+import config from '../config'
 import './MainNote.css'
 
 class MainNote extends React.Component {
   static defaultProps = {
     match: {
       params: {}
+    },
+    history: {
+      goBack: () => { }
     }
   }
 
   static contextType = ApiContext
 
+  
   render () {
     const {notes = []} = this.context
     const {noteId} = this.props.match.params
@@ -33,7 +38,7 @@ class MainNote extends React.Component {
 }
 
 MainNote.propTypes = {
-  match: PropTypes.number
+  match: PropTypes.object
 }
 
 

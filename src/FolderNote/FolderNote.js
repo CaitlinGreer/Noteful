@@ -41,7 +41,7 @@ class FolderNote extends React.Component {
 
 FolderNote.propTypes = {
   history: PropTypes.object,
-  match: PropTypes.number
+  match: PropTypes.object
 }
 
 export default FolderNote
