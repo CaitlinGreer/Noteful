@@ -1,0 +1,45 @@
+.main_list_item {
+    background-color:#ffffff;
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 350px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main_list_item a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .main_list_item a:hover {
+    cursor: pointer;
+    color: #444;
+  }
+  
+  .main_list_item a h3 {
+    margin: 0;
+    padding-bottom: 20px;
+  }
+  
+  .add_note {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .add_note_btn {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .main_list_delete_btn {
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+  }

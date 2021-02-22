@@ -1,0 +1,24 @@
+.Folder_note {
+    height: 100vh;
+    padding: 10px;
+  }
+  
+  .Folder_back_btn button {
+    background-color: #000;
+    border: none;
+    color: #FCFCFC;
+    padding: 15px;
+    border-radius: 45px;
+    font-size: inherit;
+    box-shadow: 0 5px 5px -5px #777;
+  }
+  
+  .Folder_back_btn button:hover {
+    cursor: pointer;
+    color: #999;
+  }
+ 
+  .Folder_note h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid darkslategrey;
+  }

@@ -1,0 +1,48 @@
+.folder_list {
+    padding: 10px;
+    height: 100vh;
+    
+  }
+  
+  .folder_list_item {
+    
+    list-style-type: none;
+    
+    background: white;
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    
+  }
+  
+  .folder_list_item a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .folder_list_item a:hover {
+    cursor: pointer;
+    color: #444;
+  }
+  
+  .note_count {
+    
+    padding-left: 10px;
+    font-weight: 200px;
+    color: rgb(41, 75, 75);
+    text-align: center;
+  }
+  
+  .add_folder {
+    display: flex;
+    justify-content: right;
+  }
+  .add_folder_btn {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    }
