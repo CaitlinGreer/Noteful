@@ -1,0 +1,21 @@
+.add_note_form {
+    margin: 10px 10px;
+    color: white;
+}
+
+.NotePageNav__back-button {
+    margin: 10px;
+}
+
+.add_note_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.add_note  {
+    padding: 5px;
+}
+
+.select_folder {
+    padding: 10px;
+}
