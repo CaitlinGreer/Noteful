@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CircleButton from '../CircleButton/CircleButton'
 import config from '../config'
+import ValidationError from '../ValidationError'
 import '../AddNote/AddNote.css'
 import ApiContext from '../ApiContext'
 
@@ -20,8 +21,16 @@ class AddNote extends Component {
             }
         }
     }
+
+    static defaultProps = {
+        history: {
+          goBack: () => { }
+        }
+    }
     
     static contextType = ApiContext
+    
+    // onChange functions
     
     updateName(name) {
         this.setState({
@@ -45,12 +54,33 @@ class AddNote extends Component {
         })
     }
 
+    // form Validators 
 
-    static defaultProps = {
-        history: {
-          goBack: () => { }
+    validateName () {
+        const name = this.state.name.value.trim()
+        if (name.length === 0) {
+            return 'Name is required'
+            }
+            else if (name.length < 3) {
+              return 'Name must be at least 3 characters long'
+            }
+        }   
+
+    validateContent () {
+        const content = this.state.content.value.trim()
+        if (content.length === 0) {
+            return "Content required"
         }
     }
+
+    validateFolderSelection () {
+        const folderSelection = this.state.folder.value.trim()
+        if (folderSelection === 'null'){
+            return "Folder is required"
+        }
+    }
+
+    // form submission 
 
     handleSubmit(event) {
         event.preventDefault()
@@ -117,7 +147,7 @@ class AddNote extends Component {
                         required
                     >
                     </input>
-
+                    <ValidationError message={this.validateName()}/>
                     <br />
 
                     <label>Content:</label>
@@ -133,7 +163,7 @@ class AddNote extends Component {
                         required
                     >
                     </textarea>
-
+                    <ValidationError message={this.validateContent()} />
                     <br />
 
                     <label>Select A Folder</label>
@@ -152,7 +182,7 @@ class AddNote extends Component {
                         )}
                         
                     </select>
-
+                    <ValidationError message={this.validateFolderSelection()} />
                     <br />
 
                     <button type='submit' className='add_note_btn'>Add Note</button>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ApiContext from '../ApiContext'
 import config from '../config'
 import CircleButton from '../CircleButton/CircleButton'
+import ValidationError from '../ValidationError'
 import '../AddFolder/AddFolder.css'
 
 class AddFolder extends Component {
@@ -26,16 +27,16 @@ class AddFolder extends Component {
       })
     }
   
-    // Form Validation
+    // validation for Form
   
-    // validateName () {
-    //   const name = this.state.name.value.trim()
-    //   if (name.length === 0) {
-    //     return 'Name is required'
-    //   } else if (name.length < 3) {
-    //     return 'Name must be at least 3 characters long'
-    //   }
-    // }
+    validateName () {
+      const name = this.state.name.value.trim()
+      if (name.length === 0) {
+        return 'Name is required'
+      } else if (name.length < 3) {
+        return 'Name must be at least 3 characters long'
+      }
+    }
   
 
   
@@ -94,6 +95,7 @@ class AddFolder extends Component {
                         >
 
                         </input>
+                        <ValidationError message={this.validateName()} />
                         <button 
                             className="add_folder_button"
                             type='submit'
