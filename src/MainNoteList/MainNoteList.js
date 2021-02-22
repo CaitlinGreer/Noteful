@@ -50,7 +50,7 @@ class MainNoteList extends React.Component {
               {folderNotes.map(note =>
                 <li key={note.id} className='main_list_item'>
                   <Link to={`/note/${note.id}`}>
-                    <h3>{note.name}</h3>
+                    <h2>{note.name}</h2>
                     <Moment format='MMM D YYYY'>{note.modified}</Moment>
                   </Link>
                   <div className='main_list_delete'>
@@ -81,7 +81,7 @@ class MainNoteList extends React.Component {
 }
 
 MainNoteList.propTypes = {
-  match: PropTypes.number
+  match: PropTypes.object
 }
 
 
