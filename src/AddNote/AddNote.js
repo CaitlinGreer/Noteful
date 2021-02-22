@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import CircleButton from '../CircleButton/CircleButton'
 import config from '../config'
 import ValidationError from '../ValidationError'
-import '../AddNote/AddNote.css'
 import ApiContext from '../ApiContext'
+import PropTypes from 'prop-types'
+
+import '../AddNote/AddNote.css'
 
 
 class AddNote extends Component {
@@ -192,6 +194,10 @@ class AddNote extends Component {
         )
     }
 }
+AddNote.propTypes = {
+    value: PropTypes.object
+}
+
 AddNote.defaultProps = {
     folders: []
   }

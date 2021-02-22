@@ -1,7 +1,9 @@
 import React from 'react'
 import './FolderNote.css'
 import ApiContext from '../ApiContext'
+import PropTypes from 'prop-types'
 import {findNote, findFolder} from '../notes-helpers'
+import './FolderNote.css'
 
 class FolderNote extends React.Component {
   static defaultProps = {
@@ -37,5 +39,9 @@ class FolderNote extends React.Component {
   }
 }
 
+FolderNote.propTypes = {
+  history: PropTypes.object,
+  match: PropTypes.number
+}
 
 export default FolderNote

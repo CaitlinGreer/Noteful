@@ -3,6 +3,7 @@ import ApiContext from '../ApiContext'
 import config from '../config'
 import CircleButton from '../CircleButton/CircleButton'
 import ValidationError from '../ValidationError'
+import PropTypes from 'prop-types'
 import '../AddFolder/AddFolder.css'
 
 class AddFolder extends Component {
@@ -109,6 +110,9 @@ class AddFolder extends Component {
     }
 }
 
+AddFolder.propTypes = {
+    value: PropTypes.object
+}
 
 
 export default AddFolder

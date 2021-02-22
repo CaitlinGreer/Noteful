@@ -2,6 +2,7 @@ import React from 'react'
 import Moment from 'react-moment'
 import ApiContext from '../ApiContext'
 import {findNote} from '../notes-helpers'
+import PropTypes from 'prop-types'
 import './MainNote.css'
 
 class MainNote extends React.Component {
@@ -29,6 +30,10 @@ class MainNote extends React.Component {
       </section>
     )
   }
+}
+
+MainNote.propTypes = {
+  match: PropTypes.number
 }
 
 
