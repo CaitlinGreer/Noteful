@@ -95,9 +95,9 @@ class AddNote extends Component {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({
-                name: `${name}`,
-                content: `${content}`,
-                folderId: `${folder}`
+                note_name: `${name}`,
+                note_content: `${content}`,
+                folder_id: `${folder}`
             })
         }
 
