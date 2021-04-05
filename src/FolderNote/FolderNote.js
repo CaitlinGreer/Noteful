@@ -22,7 +22,7 @@ class FolderNote extends React.Component {
     const {noteId} = this.props.match.params
 
     const note = findNote(notes, noteId) || {}
-    const folder = findFolder(folders, note.folderId)
+    const folder = findFolder(folders, note.folder_id)
 
     return (
       <div className='Folder_note'>
@@ -32,7 +32,7 @@ class FolderNote extends React.Component {
           </button>
         </div>
         {folder && (
-          <h3>{folder.name}</h3>
+          <h3>{folder.folder_name}</h3>
         )}
       </div>
     )

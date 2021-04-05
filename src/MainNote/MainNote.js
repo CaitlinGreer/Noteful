@@ -17,7 +17,6 @@ class MainNote extends React.Component {
   }
 
   static contextType = ApiContext
-
   
   render () {
     const {notes = []} = this.context
@@ -28,9 +27,9 @@ class MainNote extends React.Component {
     return (
       <section className='main_note'>
         <div>
-          <h3>{note.name}</h3>
+          <h3>{note.note_name}</h3>
           <Moment format='MMM D YYYY'>{note.modified}</Moment>
-          <p>{note.content}</p>
+          <p>{note.note_content}</p>
         </div>
       </section>
     )

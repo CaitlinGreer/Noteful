@@ -179,7 +179,7 @@ class AddNote extends Component {
                         <option className='select_folder' value={null}>Select one...</option>
                         {folders.map(folder =>
                             <option key={folder.id} value={folder.id}>
-                            {folder.name}
+                            {folder.folder_name}
                             </option>
                         )}
                         
