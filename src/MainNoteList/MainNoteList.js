@@ -32,7 +32,7 @@ class MainNoteList extends React.Component {
         this.context.fetchNotes()
       })
       .catch(error => {
-        console.log(error)
+        this.setState({error})
       })
   }
 
@@ -50,7 +50,7 @@ class MainNoteList extends React.Component {
               {folderNotes.map(note =>
                 <li key={note.id} className='main_list_item'>
                   <Link to={`/note/${note.id}`}>
-                    <h2>{note.name}</h2>
+                    <h2>{note.note_name}</h2>
                     <Moment format='MMM D YYYY'>{note.modified}</Moment>
                   </Link>
                   <div className='main_list_delete'>
