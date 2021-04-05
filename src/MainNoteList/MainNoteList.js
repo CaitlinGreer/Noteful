@@ -39,8 +39,9 @@ class MainNoteList extends React.Component {
   render () {
     const {notes = []} = this.context
     const {folderId} = this.props.match.params
-
-    const folderNotes = getNotesForFolder(notes, folderId)
+    const folderIntId = parseInt(folderId)
+    
+    const folderNotes = getNotesForFolder(notes, folderIntId)
 
     return (
       <ApiContext.Consumer>
@@ -83,6 +84,8 @@ class MainNoteList extends React.Component {
 MainNoteList.propTypes = {
   match: PropTypes.object
 }
-
+MainNoteList.defaultProps = {
+  notes: []
+}
 
 export default MainNoteList
