@@ -55,6 +55,7 @@ class AddFolder extends Component {
   
       fetch(`${config.API_ENDPOINT}/folders/`, requestOptions)
         .then(res => {
+          console.log(res)
           if (!res.ok) {
             throw new Error('Something went wrong! Try again later.')
           }
