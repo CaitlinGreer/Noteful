@@ -14,6 +14,12 @@ class MainNoteList extends React.Component {
     }
   }
 
+  static defaultProps = {
+    history: {
+      goBack: () => { }
+    }
+  }
+  
   static contextType = ApiContext
 
   deleteNoteRequest = (noteId) => {
@@ -29,6 +35,7 @@ class MainNoteList extends React.Component {
         return res.json()
       })
       .then(data => {
+        this.props.history.goBack()
         this.context.fetchNotes()
       })
       .catch(error => {
