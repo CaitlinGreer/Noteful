@@ -15,6 +15,12 @@ class AddFolder extends Component {
         }
       }
     }
+
+    static defaultProps = {
+      history: {
+        goBack: () => { }
+      }
+    }
   
     static contextType = ApiContext
   
@@ -43,23 +49,22 @@ class AddFolder extends Component {
   
     handleSubmit (event) {
       event.preventDefault()
-      const query = this.state.name.value
+      const name = this.state.name.value
   
       const requestOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          folder_name: `${query}`
+          folder_name: `${name}`
         })
       }
   
       fetch(`${config.API_ENDPOINT}/folders/`, requestOptions)
         .then(res => {
           console.log(res)
-          if (!res.ok) {
-            throw new Error('Something went wrong! Try again later.')
-          }
-          return res.json()
+          if (!res.ok) 
+            return res.json().then(e => Promise.reject(e))
+            return res.json()
         })
         .then(() => {
           this.props.history.goBack()
