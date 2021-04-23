@@ -53,7 +53,7 @@ class AddFolder extends Component {
   
       const requestOptions = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'content-type': 'application/json'},
         body: JSON.stringify({
           folder_name: `${name}`
         })
@@ -61,10 +61,9 @@ class AddFolder extends Component {
   
       fetch(`${config.API_ENDPOINT}/folders/`, requestOptions)
         .then(res => {
-          console.log(res)
-          if (!res.ok) 
-            return res.json().then(e => Promise.reject(e))
-            return res.json()
+            if (!res.ok) 
+              return res.json().then(e => Promise.reject(e))
+              return res.json()
         })
         .then(() => {
           this.props.history.goBack()
